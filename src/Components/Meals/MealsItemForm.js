@@ -1,12 +1,20 @@
 import classes from "./MealsItemForm.module.css";
+import Input from "../UI/Input";
 
 const MealsItemForm = (props) => {
   return (
     <form className={classes.form}>
-      <div className={classes.input}>
-        <label for="amount">Amount</label>
-        <input id="amount" type="number" value={1} />
-      </div>
+      <Input
+        label="Amount"
+        input={{
+          id: "amount_" + props.id,
+          type: "number",
+          defaultValue: "1",
+          min: "1",
+          max: "5",
+          step: "1",
+        }}
+      />
       <button type="submit">+Add</button>
     </form>
   );
