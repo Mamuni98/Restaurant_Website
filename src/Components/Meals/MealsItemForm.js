@@ -13,7 +13,7 @@ const MealsItemForm = (props) => {
       id: props.id,
       name: props.items.name,
       price: props.items.price,
-      amount: inputAmount,
+      amount: Number(inputAmount),
     };
 
     cartCnxt.addItem(cartItems);
