@@ -9,6 +9,10 @@ const CartItem = (props) => {
     event.preventDefault();
     cartCnxt.removeItem(props.id);
   };
+  const increaseAmountHandler = (event) => {
+    event.preventDefault();
+    cartCnxt.increaseAmount(props);
+  }
 
   return (
     <li className={classes["cart-item"]}>
@@ -21,7 +25,7 @@ const CartItem = (props) => {
       </div>
       <div className={classes.actions}>
         <button onClick={removeItemHandler}>−</button>
-        <button>+</button>
+        <button onClick={increaseAmountHandler}>+</button>
       </div>
     </li>
   );
